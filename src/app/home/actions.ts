@@ -1,10 +1,39 @@
 import { createClient } from "@/utils/supabase/server";
 
+// const handleVote = (direction: number) => {
+//   console.log(`Voted ${direction > 0 ? 'right' : 'left'}`)
+//   if (currentIndex < DUMMY_LISTINGS.length - 1) {
+//     setCurrentIndex(prev => prev + 1)
+//   } else {
+//     console.log("No more listings")
+//     // You could reset to the beginning, or show a message to the user
+//     // setCurrentIndex(0)
+//   }
+// }
+
+export async function handleSignOut() {
+  try {
+    const response = await fetch("/api/signout", {
+      method: "POST",
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to sign out");
+    }
+
+    window.location.href = "/"; // Redirect after signing out
+  } catch (error) {
+    console.error("Sign-out error:", error);
+  }
+};
+
 export async function handleSwipe(
   swiperId: string,
   swipedId: string,
-  action: "like" | "dislike"
+  action: "like" | "dislike",
+  setCurrentIndex: (index: number) => void
 ) {
+  setCurrentIndex(prev => prev + 1);  // Move to the next listing
   const supabase = await createClient();
 
   // Insert swipe action
