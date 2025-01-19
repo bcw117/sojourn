@@ -53,15 +53,22 @@ export default function ImportanceMatrixSurvey(props: PreferenceProps) {
   };
 
   const getOrderedPreferences = (updatedRatings: Ratings) => {
+    // Map old keys to the desired new keys
+    const keyMap: Record<string, string> = {
+      noisePreference: "quiet_diff",
+      personalityPreference: "socialness_diff",
+      cleanliness: "cleanliness_diff",
+      sleepSchedule: "sleep_schedule_diff",
+    };
+
     return Object.entries(updatedRatings)
       .filter(([, value]) => value.importance !== "") // Include only selected preferences
       .sort(
         ([, a], [, b]) =>
           importanceOrder[a.importance] - importanceOrder[b.importance]
       )
-      .map(([key]) => key.replace(/Preference|Schedule/, "").toLowerCase()); // Transform keys to readable names
+      .map(([key]) => keyMap[key]); // Use the mapped keys for the final output
   };
-
   return (
     <div className="p-4">
       <Card className="max-w-4xl mx-auto">

@@ -109,32 +109,30 @@ const SubletForm = ({
         </Select>
       </div>
       <div className="mb-4">
-        <label className="block mb-2">How many bedrooms do you have?</label>
+        <label className="block mb-2">
+          Will the subtenant be sharing a bedroom with you?
+        </label>
         <Select name="numRooms">
           <SelectTrigger id="numRoomSelect" className="w-full">
             <SelectValue placeholder="" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="1">1</SelectItem>
-            <SelectItem value="2">2</SelectItem>
-            <SelectItem value="3">3</SelectItem>
-            <SelectItem value="4">4</SelectItem>
-            <SelectItem value="5">5+</SelectItem>
+            <SelectItem value="0">No</SelectItem>
+            <SelectItem value="1">Yes</SelectItem>
           </SelectContent>
         </Select>
       </div>
       <div className="mb-4">
-        <label className="block mb-2">How many bathrooms do you have?</label>
+        <label className="block mb-2">
+          Will the subtenant be sharing a bathroom with you?
+        </label>
         <Select name="numBathrooms">
           <SelectTrigger id="bedroom-select" className="w-full">
             <SelectValue placeholder="" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="1">1</SelectItem>
-            <SelectItem value="2">2</SelectItem>
-            <SelectItem value="3">3</SelectItem>
-            <SelectItem value="4">4</SelectItem>
-            <SelectItem value="5">5+</SelectItem>
+            <SelectItem value="0">No</SelectItem>
+            <SelectItem value="1">Yes</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -147,7 +145,7 @@ const SubletForm = ({
           <SelectContent>
             <SelectItem value="male">Male</SelectItem>
             <SelectItem value="female">Female</SelectItem>
-            <SelectItem value="na">No Preference</SelectItem>
+            <SelectItem value="na">Other</SelectItem>
           </SelectContent>
         </Select>
       </div>

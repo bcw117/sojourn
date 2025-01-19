@@ -4,11 +4,15 @@ import "./globals.css";
 import Image from "next/image";
 import logo from "../pictures/logo-with-name.png";
 import Link from "next/link";
+import { getUser } from "@/utils/auth/user";
+import { ProfileButton } from "../components/profile-button-dropdown"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+
+const authorized = getUser() != null;
 
 export const metadata: Metadata = {
   title: "sojourn",
@@ -23,9 +27,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Link href="/home" className="absolute top-4 left-4">
-          <Image src={logo} alt="logo" width={128} height={128} />
-        </Link>
+        <header className="w-full max-w-md flex justify-between items-center">
+          <Link href="/home" className="absolute top-4 left-4">
+            <Image src={logo} alt="logo" width={128} height={128} />
+          </Link>
+          <div className="absolute top-4 right-4">
+            {authorized &&
+              <ProfileButton
+                imageUrl="/placeholder.svg?height=40&width=40"
+                username="Jane"
+              />
+            }
+          </div>
+        </header>
         {children}
       </body>
     </html>

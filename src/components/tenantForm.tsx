@@ -98,35 +98,29 @@ const TenantForm = ({
       </div>
       <div className="mb-4">
         <label className="block mb-2">
-          How many bedrooms are you looking for?
+          Are you willing to share a bedroom with your roomate(s)?
         </label>
         <Select name="numRoomPref">
           <SelectTrigger id="numRoomSelect" className="w-full">
             <SelectValue placeholder="" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="1">1</SelectItem>
-            <SelectItem value="2">2</SelectItem>
-            <SelectItem value="3">3</SelectItem>
-            <SelectItem value="4">4</SelectItem>
-            <SelectItem value="5">5+</SelectItem>
+            <SelectItem value="0">No</SelectItem>
+            <SelectItem value="1">Yes</SelectItem>
           </SelectContent>
         </Select>
       </div>
       <div className="mb-4">
         <label className="block mb-2">
-          How many bathrooms are you looking for?
+          Are you willing to share a bathroom with your roomate(s)?
         </label>
         <Select name="numBathroomPref">
-          <SelectTrigger id="bedroom-select" className="w-full">
+          <SelectTrigger id="numRoomSelect" className="w-full">
             <SelectValue placeholder="" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="1">1</SelectItem>
-            <SelectItem value="2">2</SelectItem>
-            <SelectItem value="3">3</SelectItem>
-            <SelectItem value="4">4</SelectItem>
-            <SelectItem value="5">5+</SelectItem>
+            <SelectItem value="0">No</SelectItem>
+            <SelectItem value="1">Yes</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -139,7 +133,7 @@ const TenantForm = ({
           <SelectContent>
             <SelectItem value="male">Male</SelectItem>
             <SelectItem value="female">Female</SelectItem>
-            <SelectItem value="na">No Preference</SelectItem>
+            <SelectItem value="na">Other</SelectItem>
           </SelectContent>
         </Select>
       </div>
