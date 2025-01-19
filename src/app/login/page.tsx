@@ -12,9 +12,9 @@ export default function LoginPage() {
           <p className="text-center text-[#000000]">Sign in to sojourn</p>
           <form className="flex flex-col gap-2 w-64">
             {/* <label htmlFor="email">Email:</label> */}
-            <input id="email" name="email" type="email" placeholder="Email address" className="rounded-lg border-[#A3A3A3] px-3 py-1.5 my-2 text-xs" style={{ borderWidth: '1px', fontFamily: 'PPObjectSans-Regular' }} required />
+            <input id="email" name="email" type="email" placeholder="Email address" className="rounded-lg border-[#A3A3A3] px-3 py-1.5 my-2 text-xs text-[#000000]" style={{ borderWidth: '1px', fontFamily: 'PPObjectSans-Regular' }} required />
             {/* <label htmlFor="password">Password:</label> */}
-            <input id="password" name="password" type="password" placeholder="Password" className="rounded-lg border-[#A3A3A3] px-3 py-1.5 my-2 text-xs" style={{ borderWidth: '1px', fontFamily: 'PPObjectSans-Regular' }} required />
+            <input id="password" name="password" type="password" placeholder="Password" className="rounded-lg border-[#A3A3A3] px-3 py-1.5 my-2 text-xs text-[#000000]" style={{ borderWidth: '1px', fontFamily: 'PPObjectSans-Regular' }} required />
             <div className="flex items-center justify-between my-5">
               <div className="flex items-center gap-3">
                 <input type="checkbox" id="staySignedIn" name="signInOption" className="accent-[#A3A3A3] border-[#A3A3A3] border-2" />
