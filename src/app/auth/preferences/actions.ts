@@ -33,5 +33,5 @@ export async function formAction(formData: FormData) {
     console.log(error);
   }
 
-  redirect("/");
+  redirect("/home");
 }

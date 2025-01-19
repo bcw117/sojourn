@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'PPObjectSans-Heavy';
-  src: url('../fonts/PPObjectSans-Heavy.otf') format('opentype');
+  font-family: "PPObjectSans-Heavy";
+  src: url("../fonts/PPObjectSans-Heavy.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'PPObjectSans-HeavySlanted';
-  src: url('../fonts/PPObjectSans-HeavySlanted.otf') format('opentype');
+  font-family: "PPObjectSans-HeavySlanted";
+  src: url("../fonts/PPObjectSans-HeavySlanted.otf") format("opentype");
   font-weight: 100;
 }
 
 @font-face {
-  font-family: 'PPObjectSans-Regular';
-  src: url('../fonts/PPObjectSans-Regular.otf') format('opentype');
+  font-family: "PPObjectSans-Regular";
+  src: url("../fonts/PPObjectSans-Regular.otf") format("opentype");
   font-weight: 100;
 }
 
 @font-face {
-  font-family: 'PPObjectSans-Slanted';
-  src: url('../fonts/PPObjectSans-Slanted.otf') format('opentype');
+  font-family: "PPObjectSans-Slanted";
+  src: url("../fonts/PPObjectSans-Slanted.otf") format("opentype");
   font-weight: 100;
 }
 
@@ -89,5 +89,6 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'PPObjectSans-Heavy', 'PPObjectSans-HeavySlanted', 'PPObjectSans-Regular', 'PPObjectSans-Slanted', sans-serif;
+  font-family: "PPObjectSans-Heavy", "PPObjectSans-HeavySlanted",
+    "PPObjectSans-Regular", "PPObjectSans-Slanted", sans-serif;
 }
