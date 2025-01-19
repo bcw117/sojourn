@@ -2,10 +2,14 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-
 import { createClient } from "@/utils/supabase/server";
 
-export async function login(formData: FormData) {
+export async function signup(formData: FormData) {
+  // checking user entered appropriate data
+  if (formData.get("password") !== formData.get("confirm_password")) {
+    redirect("/signup?error=password_mismatch");
+  }
+
   const supabase = await createClient();
 
   // type-casting here for convenience
@@ -15,7 +19,7 @@ export async function login(formData: FormData) {
     password: formData.get("password") as string,
   };
 
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signUp(data);
 
   if (error) {
     redirect("/error");
@@ -24,3 +28,8 @@ export async function login(formData: FormData) {
   revalidatePath("/", "layout");
   redirect("/");
 }
+
+// const searchParams = new URLSearchParams(window.location.search);
+// const error = searchParams.get('error');
+// if (error === 'password_mismatch') {
+// }
