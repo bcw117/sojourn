@@ -7,7 +7,7 @@ import { createClient } from "@/utils/supabase/server";
 export async function signup(formData: FormData) {
   // checking user entered appropriate data
   if (formData.get("password") !== formData.get("confirm_password")) {
-    redirect("/signup?error=password_mismatch");
+    redirect("/auth/signup?error=password_mismatch");
   }
 
   const supabase = await createClient();
@@ -26,7 +26,7 @@ export async function signup(formData: FormData) {
   }
 
   revalidatePath("/", "layout");
-  redirect("/");
+  redirect("/auth/account-creation");
 }
 
 // const searchParams = new URLSearchParams(window.location.search);

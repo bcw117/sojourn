@@ -39,6 +39,7 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // auth will process all login/signup routes
   if (
     !user &&
     !request.nextUrl.pathname.startsWith("/auth") &&
