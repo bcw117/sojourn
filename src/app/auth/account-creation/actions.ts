@@ -49,5 +49,5 @@ export async function insert(data: UserData) {
   }
 
   revalidatePath("/", "layout");
-  redirect("/auth/preferences");
+  redirect(`/auth/preferences?type=${data.userType}`);
 }

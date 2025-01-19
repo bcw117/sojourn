@@ -3,22 +3,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PreferenceProps } from "@/types/preferences";
 
-export default function PersonalityPreference(props: PreferenceProps) {
+export default function PersonalityPreference() {
   const [selectedPreference, setSelectedPreference] = useState<string | null>(
     null
   );
 
   const handlePreferenceClick = (preference: string) => {
-    if (preference === "extroverts") {
-      props.onChange(0);
-    } else if (preference === "introverts") {
-      props.onChange(2);
-    } else {
-      props.onChange(1);
-    }
-
     setSelectedPreference(preference);
   };
 
