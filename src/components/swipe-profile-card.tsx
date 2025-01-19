@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ImageGallery } from "./image-gallery"
 import { useSpring, animated } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
+import { useState } from 'react'
 
 interface ListingCardProps {
   imageUrl: string
@@ -13,13 +14,7 @@ interface ListingCardProps {
   location: string
   profileImage?: string
   images: string[]
-  setCurrentIndex: (index: number) => void
-  onSwipe: (
-    swiperId: string,
-    swipedId: string,
-    action: "like" | "dislike",
-    setCurrentIndex: (index: number) => void
-  ) => void
+  onSwipe: () => void
 }
 
 export function ListingCard({
@@ -33,8 +28,8 @@ export function ListingCard({
 }: ListingCardProps) {
   const [{ x, rotate }, api] = useSpring(() => ({ x: 0, rotate: 0 }))
 
-  const bind = useDrag(({ down, movement: [mx], direction: [xDir], velocity }) => {
-    const trigger = velocity > 0.2
+  const bind = useDrag(({ down, movement: [mx], direction: [xDir], velocity: [vx] }) => {
+    const trigger = Math.abs(vx) > 0.2
     const dir = xDir < 0 ? -1 : 1
 
     if (!down && trigger) {
@@ -42,7 +37,7 @@ export function ListingCard({
         x: dir * 200,
         rotate: dir * 20,
         onRest: () => {
-          onSwipe(null, null, dir > 0 ? "like" : "dislike", setCurrentIndex)
+          onSwipe()
           api.start({ x: 0, rotate: 0 })
         },
       })
@@ -60,7 +55,7 @@ export function ListingCard({
       >
         <div className="absolute inset-0">
           <Image
-            src={imageUrl || "/placeholder.svg"}
+            src={images[currentImageIndex] || "/placeholder.svg"}
             alt="Listing photo"
             fill
             className="object-cover"
