@@ -20,7 +20,7 @@ export default function Home() {
         </p>
         <div className="flex space-x-16">
           <Link
-            href="/signup"
+            href="/auth/signup"
             className="w-42 px-14 py-1 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
             style={{
               fontFamily: "PPObjectSans-Regular",
@@ -31,7 +31,7 @@ export default function Home() {
             Sign up
           </Link>
           <Link
-            href="/login"
+            href="/auth/signin"
             className="w-42 px-14 py-1 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
             style={{
               fontFamily: "PPObjectSans-Regular",

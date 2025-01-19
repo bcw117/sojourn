@@ -11,19 +11,33 @@ const sleepOptions = [
     value: "early",
     label: "I usually wake up early in the morning",
     icon: Sun,
+    numericValue: 0,
   },
-  { value: "flexible", label: "I have a flexible sleep schedule", icon: Clock },
-  { value: "late", label: "I usually go to bed late at night", icon: Moon },
+  {
+    value: "flexible",
+    label: "I have a flexible sleep schedule",
+    icon: Clock,
+    numericValue: 1,
+  },
+  {
+    value: "late",
+    label: "I usually go to bed late at night",
+    icon: Moon,
+    numericValue: 2,
+  },
 ];
 
 export default function SleepSchedulePreference(props: PreferenceProps) {
   const [selectedSchedule, setSelectedSchedule] = useState<string | null>(null);
 
-  const handleScheduleClick = (schedule: string) => {
-    const option = sleepOptions.find((option) => option.label === schedule);
+  const handleScheduleClick = (value: string) => {
+    const option = sleepOptions.find((option) => option.value === value);
 
-    props.onChange(option);
-    setSelectedSchedule(schedule);
+    if (option) {
+      // Call props.onChange with the numeric value
+      props.onChange(option.numericValue);
+      setSelectedSchedule(value); // Update the selected schedule
+    }
   };
 
   return (

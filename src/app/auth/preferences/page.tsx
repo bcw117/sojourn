@@ -13,7 +13,7 @@ const page = () => {
   const [noise, setNoise] = useState<number>(1);
   const [personPref, setPersonPref] = useState<number>(1);
   const [cleanliness, setCleanliness] = useState<number>(1);
-  const [sleepPref, setSleepPref] = useState<number>(1);
+  const [sleepSch, setSleepSch] = useState<number>(1);
   const [ranking, setRanking] = useState<string[]>([
     "noise",
     "social",
@@ -21,12 +21,14 @@ const page = () => {
     "sleep_schedule",
   ]);
 
+  console.log(sleepSch);
+
   const handleSubmit = () => {
     const preferences = {
       noise_level: noise,
       social: personPref,
       cleanliness,
-      sleep_schedule: sleepPref,
+      sleep_schedule: sleepSch,
       ranking,
     };
     formAction(preferences);
@@ -37,7 +39,7 @@ const page = () => {
       <NoisePreference onChange={setNoise} />
       <PersonalityPreference onChange={setPersonPref} />
       <CleanlinessPreference onChange={setCleanliness} />
-      <SleepSchedulePreference onChange={setSleepPref} />
+      <SleepSchedulePreference onChange={setSleepSch} />
       <ImportanceMatrixSurvey onChange={setRanking} />
       <button onClick={handleSubmit}>Submit</button>
     </div>
