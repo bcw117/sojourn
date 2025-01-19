@@ -133,7 +133,7 @@ const TenantForm = ({
           <SelectContent>
             <SelectItem value="male">Male</SelectItem>
             <SelectItem value="female">Female</SelectItem>
-            <SelectItem value="na">No Preference</SelectItem>
+            <SelectItem value="na">Other</SelectItem>
           </SelectContent>
         </Select>
       </div>
