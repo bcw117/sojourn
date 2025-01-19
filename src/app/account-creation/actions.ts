@@ -50,10 +50,11 @@ export async function insert(data: UserData) {
       id: user.id,
       location: data.location,
       gender: data.gender,
-      rent_price: data.rentPrice,
+      rent_price_min: data.rentPrice,
+      rent_price_max: data.rentPrice, //MUST CHANGE, EDIT LATER CHANGE THE BUTTON ON PAGE AND ADD FIELD ON FORM. 
       rooms: data.rooms,
       shared_room: data.sharedRoomPreference,
-      shared_washroom: data.washroomPreference
+      shared_washroom: data.washroomPreference, 
     });
     console.log(error);
   }
