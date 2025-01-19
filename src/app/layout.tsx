@@ -31,14 +31,6 @@ export default function RootLayout({
           <Link href="/home" className="absolute top-4 left-4">
             <Image src={logo} alt="logo" width={128} height={128} />
           </Link>
-          <div className="absolute top-4 right-4">
-            {authorized &&
-              <ProfileButton
-                imageUrl="/placeholder.svg?height=40&width=40"
-                username="Jane"
-              />
-            }
-          </div>
         </header>
         {children}
       </body>
