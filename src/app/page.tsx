@@ -11,17 +11,28 @@ export default function Home() {
           className="text-center text-[#171717] mb-5"
           style={{
             fontFamily: "PPObjectSans-Heavy",
-            fontSize: "16px",
+            fontSize: "32px",
             fontWeight: 1000,
             letterSpacing: "0.06em",
           }}
         >
           Where every stay creates lifelong connections
         </p>
+        <p
+          className="mb-8"
+          style={{
+            fontFamily: "PPObjectSans-Heavy",
+            fontSize: "24px",
+            fontWeight: 500,
+            letterSpacing: "0.06em",
+          }}
+        >
+          Establishing better friendships between roommates
+        </p>
         <div className="flex space-x-16">
           <Link
             href="/auth/signup"
-            className="w-42 px-14 py-1 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
+            className="flex items-center justify-center w-42 px-14 py-1 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
             style={{
               fontFamily: "PPObjectSans-Regular",
               fontSize: "10px",
@@ -32,7 +43,7 @@ export default function Home() {
           </Link>
           <Link
             href="/auth/signin"
-            className="w-42 px-14 py-1 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
+            className="flex items-center justify-center w-42 px-14 py-3 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
             style={{
               fontFamily: "PPObjectSans-Regular",
               fontSize: "10px",
