@@ -47,7 +47,7 @@ export function ListingCard({
   }, { from: () => [x.get(), 0], filterTaps: true, rubberband: true })
 
   return (
-    <div className="relative w-full max-w-md aspect-square">
+    <div className="relative w-full max-w-md aspect-square" style={{zIndex: 100}}>
       <animated.div
         {...bind()}
         style={{ x, rotate, touchAction: 'none' }}

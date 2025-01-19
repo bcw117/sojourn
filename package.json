@@ -37,6 +37,7 @@
     "react-country-region-selector": "^4.0.2",
     "react-country-state-city": "^1.1.9",
     "react-dom": "^19.0.0",
+    "react-swipeable": "^7.0.2",
     "shadcn-ui": "^0.9.4",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7"

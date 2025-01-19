@@ -131,7 +131,7 @@ export default function SwipeInterface() {
           profileImage: placeholder,
           images: [house10, placeholder, placeholder, placeholder],
         },
-      ];
+      ].sort(() => Math.random() - 0.5);
       const potentialMatches = DUMMY_LISTINGS;
       setMatches(potentialMatches);
       setUser(userData);

@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ImageGallery } from "./image-gallery"
 import { useSpring, animated } from '@react-spring/web'
 import { useDrag } from '@use-gesture/react'
-import { useState } from 'react'
 
 interface ListingCardProps {
   imageUrl: string
