@@ -1,5 +1,6 @@
 'use client'
 
+import { handleSignOut } from "@/app/home/actions"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
@@ -31,12 +32,12 @@ export function ProfileButton({ imageUrl, username = "User" }: ProfileButtonProp
       <DropdownMenuContent align="end" className="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
+        {/* <DropdownMenuItem asChild>
           <Link href="/profile" className="cursor-pointer">
             <User className="mr-2 h-4 w-4" />
             Profile
           </Link>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
         <DropdownMenuItem asChild>
           <Link href="/settings" className="cursor-pointer">
             <Settings className="mr-2 h-4 w-4" />
@@ -44,9 +45,11 @@ export function ProfileButton({ imageUrl, username = "User" }: ProfileButtonProp
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogOut className="mr-2 h-4 w-4" />
-          Log out
+        <DropdownMenuItem asChild>
+          <Link href="/" className="cursor-pointer" onClick={handleSignOut}>
+            <LogOut className="mr-2 h-4 w-4" />
+            Log out
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

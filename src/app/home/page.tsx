@@ -18,6 +18,7 @@ import house8 from "../../pictures/house-pic-8.png";
 import house9 from "../../pictures/house-pic-9.png";
 import house10 from "../../pictures/house-pic-10.png";
 import placeholder from "../../pictures/placeholder.png";
+import { ProfileButton } from "../../components/profile-button-dropdown"
 
 export default function SwipeInterface() {
   const [user, setUser] = useState(null);
@@ -161,6 +162,9 @@ export default function SwipeInterface() {
 
   return (
     <div className="pt-32 min-h-screen bg-gray-100 flex flex-col items-center py-8">
+        <div className="absolute top-4 right-4">
+          <ProfileButton />
+        </div>
       <div {...swipeHandlers} className="relative w-full max-w-md px-4">
         {currentListing && (
           <>

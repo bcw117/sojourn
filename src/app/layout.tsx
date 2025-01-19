@@ -5,7 +5,6 @@ import Image from "next/image";
 import logo from "../pictures/logo-with-name.png";
 import Link from "next/link";
 import { getUser } from "@/utils/auth/user";
-import { ProfileButton } from "../components/profile-button-dropdown"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
