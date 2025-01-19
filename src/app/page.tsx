@@ -35,7 +35,7 @@ export default function Home() {
             className="flex items-center justify-center w-42 px-14 py-1 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
             style={{
               fontFamily: "PPObjectSans-Regular",
-              fontSize: "10px",
+              fontSize: "12px",
               borderWidth: "1px",
             }}
           >
@@ -46,7 +46,7 @@ export default function Home() {
             className="flex items-center justify-center w-42 px-14 py-3 bg-[#FFFFFF] text-[#171717] border-[#171717] rounded-full hover:bg-[#FAFAFA] transition-colors duration-200"
             style={{
               fontFamily: "PPObjectSans-Regular",
-              fontSize: "10px",
+              fontSize: "12px",
               borderWidth: "1px",
             }}
           >
